@@ -1,0 +1,5 @@
+{
+  "name": "NeuroRad AI - VLM Agent",
+  "description": "Advanced Medical Vision-Language Model interface for radiology diagnostics using Gemini 3 Flash.",
+  "requestFramePermissions": []
+}
