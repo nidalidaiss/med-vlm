@@ -1,4 +1,4 @@
-import { AnalysisResult } from "./types";
+import { AnalysisResult } from "./types.ts";
 import { FunctionDeclaration, Type } from "@google/genai";
 
 export const SYSTEM_INSTRUCTION_MEDICAL = `

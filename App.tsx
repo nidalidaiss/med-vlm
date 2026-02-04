@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Sidebar } from './components/Sidebar';
-import { ImageViewer } from './components/ImageViewer';
-import { RightPanel } from './components/RightPanel';
-import { ImageState, AnalysisResult, ChatMessage, SensitivityLevel, ResearchResult } from './types';
-import { analyzeMedicalImage, chatWithRadiologist, performMedicalResearch } from './services/geminiService';
+import { Sidebar } from './components/Sidebar.tsx';
+import { ImageViewer } from './components/ImageViewer.tsx';
+import { RightPanel } from './components/RightPanel.tsx';
+import { ImageState, AnalysisResult, ChatMessage, SensitivityLevel, ResearchResult } from './types.ts';
+import { analyzeMedicalImage, chatWithRadiologist, performMedicalResearch } from './services/geminiService.ts';
 
 const App: React.FC = () => {
   const [imageState, setImageState] = useState<ImageState>({

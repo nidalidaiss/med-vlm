@@ -1,5 +1,5 @@
 import React from 'react';
-import { MOCK_PATIENTS } from '../constants';
+import { MOCK_PATIENTS } from '../constants.ts';
 import { Activity, Users, FileText, Search, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export const Sidebar: React.FC = () => {

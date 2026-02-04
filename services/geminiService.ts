@@ -1,6 +1,6 @@
 import { GoogleGenAI, Type } from "@google/genai";
-import { AnalysisResult, SensitivityLevel, ResearchResult, Finding } from "../types";
-import { SYSTEM_INSTRUCTION_MEDICAL, HIGHLIGHT_ANATOMY_TOOL } from "../constants";
+import { AnalysisResult, SensitivityLevel, ResearchResult, Finding } from "../types.ts";
+import { SYSTEM_INSTRUCTION_MEDICAL, HIGHLIGHT_ANATOMY_TOOL } from "../constants.ts";
 
 // Initialize Gemini Client
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });

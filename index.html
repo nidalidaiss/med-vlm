@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NeuroRad AI</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Babel Standalone for Client-Side Compilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Environment Variable Shim for Netlify -->
+    <script>
+      window.process = {
+        env: {
+          // This placeholder is replaced by the netlify.toml build command
+          API_KEY: '__ENV_API_KEY__'
+        }
+      };
+    </script>
+
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
       
@@ -49,5 +63,7 @@
 </head>
   <body>
     <div id="root"></div>
+    <!-- Entry Point with Babel Type -->
+    <script type="text/babel" data-presets="react,typescript" src="./index.tsx" data-type="module"></script>
   </body>
 </html>

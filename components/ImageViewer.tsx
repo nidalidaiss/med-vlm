@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Upload, ZoomIn, ZoomOut, Sun, Maximize, ScanEye, Code2, Film, Settings2, RotateCcw } from 'lucide-react';
-import { Finding, ImageState, SensitivityLevel } from '../types';
-import { PYTHON_AGENT_SCRIPT } from '../constants';
+import { Finding, ImageState, SensitivityLevel } from '../types.ts';
+import { PYTHON_AGENT_SCRIPT } from '../constants.ts';
 
 interface ImageViewerProps {
   imageState: ImageState;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { AnalysisResult, ChatMessage, ResearchResult } from '../types';
+import { AnalysisResult, ChatMessage, ResearchResult } from '../types.ts';
 import { FileText, MessageSquare, Send, Sparkles, AlertTriangle, Download, Copy, Microscope, ExternalLink, Loader2 } from 'lucide-react';
 
 interface RightPanelProps {
