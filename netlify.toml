@@ -1,5 +1,11 @@
 [build]
-  # We use sed to replace the placeholder in index.html with the actual API Key from Netlify Environment Variables.
-  # The syntax ensures the shell variable $API_KEY is expanded and placed into the file.
-  command = "sed -i 's|__ENV_API_KEY__|'$API_KEY'|g' index.html"
-  publish = "."
+  # 1. Install dependencies (npm install)
+  # 2. Build the app using Vite (npm run build)
+  # 3. Inject the API Key into the BUILT html file in the 'dist' folder
+  command = "npm install && npm run build && sed -i 's|__ENV_API_KEY__|'$API_KEY'|g' dist/index.html"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
