@@ -2,8 +2,21 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { AnalysisResult, SensitivityLevel, ResearchResult, Finding } from "../types.ts";
 import { SYSTEM_INSTRUCTION_MEDICAL, HIGHLIGHT_ANATOMY_TOOL } from "../constants.ts";
 
+// Helper to access API key safely in both Node and Browser (via Netlify shim)
+const getApiKey = (): string => {
+  // @ts-ignore
+  if (typeof window !== "undefined" && window.process && window.process.env && window.process.env.API_KEY) {
+    // @ts-ignore
+    return window.process.env.API_KEY;
+  }
+  if (typeof process !== "undefined" && process.env && process.env.API_KEY) {
+    return process.env.API_KEY;
+  }
+  return '';
+};
+
 // Initialize Gemini Client
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+const ai = new GoogleGenAI({ apiKey: getApiKey() });
 
 const MODEL_NAME = 'gemini-3-flash-preview';
 
