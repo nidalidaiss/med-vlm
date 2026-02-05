@@ -1,4 +1,5 @@
 [build]
-  # We use sed to replace the placeholder in index.html with the actual API Key from Netlify Environment Variables during the build process.
-  command = "sed -i \"s|__ENV_API_KEY__|$API_KEY|g\" index.html"
+  # We use sed to inject the API Key from Netlify Environment Variables into index.html.
+  # The syntax '...'$API_KEY'...' ensures the key is concatenated safely.
+  command = "sed -i 's|__ENV_API_KEY__|'$API_KEY'|g' index.html"
   publish = "."

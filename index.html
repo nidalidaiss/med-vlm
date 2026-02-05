@@ -11,9 +11,11 @@
     
     <!-- Environment Variable Shim for Netlify -->
     <script>
+      // This object mimics the Node.js process.env object in the browser.
+      // The value '__ENV_API_KEY__' is a placeholder.
+      // Netlify replaces it with the actual key during the 'build' command defined in netlify.toml.
       window.process = {
         env: {
-          // This placeholder is replaced by the netlify.toml build command
           API_KEY: '__ENV_API_KEY__'
         }
       };
